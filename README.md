@@ -1,1 +1,1 @@
-# Flow-TS-Imputation-by-GNN
+# Flow-GRNNI
