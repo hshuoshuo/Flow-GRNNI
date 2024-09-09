@@ -38,7 +38,7 @@ The directory is structured as follows:
 │   ├── fillers
 │   ├── nn
 │   └── utils
-├── requirements.txt
+├── conda_env.yml
 └── scripts
     ├── run_baselines.py
     ├── run_base-grin.py
