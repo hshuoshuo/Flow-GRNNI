@@ -1,7 +1,7 @@
-# Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation - [pdf](https://openreview.net/pdf?id=kOu3-S3wJ7))
+# Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation - [pdf]([https://openreview.net/pdf?id=kOu3-S3wJ7](https://arxiv.org/submit/5840053/view)))
 
-[![PDF](https://img.shields.io/badge/%E2%87%A9-PDF-orange.svg?style=flat-square)](https://openreview.net/pdf?id=kOu3-S3wJ7)
-[![arXiv](https://img.shields.io/badge/arXiv-2108.00298-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2108.00298)
+[![PDF](https://img.shields.io/badge/%E2%87%A9-PDF-orange.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
+[![arXiv](https://img.shields.io/badge/arXiv-2108.00298-b31b1b.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
 
 This repository contains the code to replicate the experiments from the paper "Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation." The paper presents a Graph Recurrent Neural Network (GRNN) that leverages river network structures and spatiotemporal data to enhance data resolution and accuracy.
 
@@ -12,12 +12,6 @@ This repository contains the code to replicate the experiments from the paper "H
 <h2 align=center>Inro to Hydro-GRNNI</h2>
 
 This study introduces Hydro-GRNNI, an innovative method that improves the resolution of spatial and temporal hydrological data by combining river flow direction information with spatiotemporal inputs using a Graph Recurrent Neural Network (GRNN). By constructing a physical flow direction graph, Hydro-GRNNI establishes directional relationships among river monitoring stations and utilizes spatiotemporal encoders for accurate data imputation.
-
-<p align=center>
-  <a href="https://github.com/marshka/sinfony">
-    <img src="./grin.png" alt="Logo"/>
-  </a>
-</p>
 
 ---
 
@@ -30,15 +24,13 @@ The directory is structured as follows:
 ├── config
 │   ├── bimpgru
 │   ├── brits
-│   ├── grin
-│   ├── mpgru
 │   ├── rgain
-│   └── var
+│   ├── mpgru
+│   ├── var
+│   ├── grin
+│   └── hydro
 ├── datasets
-│   ├── air_quality
-│   ├── metr_la
-│   ├── pems_bay
-│   └── synthetic
+│   └── flow_dis
 ├── lib
 │   ├── __init__.py
 │   ├── data
@@ -49,53 +41,46 @@ The directory is structured as follows:
 ├── requirements.txt
 └── scripts
     ├── run_baselines.py
-    ├── run_imputation.py
-    └── run_synthetic.py
+    ├── run_base-grin.py
+    └── run_grnni.py
 
 ```
-Note that, given the size of the files, the datasets are not readily available in the folder. See the next section for the downloading instructions.
-
-## Datasets
-
-We regret that the dataset used in our experiments is not open-source. However, you can adapt any suitable dataset to be compatible with our method.
 
 ## Configuration files
 
-The `config` directory stores all the configuration files used to run the experiment. They are divided into folders, according to the model.
+The `config` directory contains model-specific configuration files. Each subfolder corresponds to a different model configuration used in the experiments.
 
-## Library
+## Library Code
 
-The support code, including the models and the datasets readers, are packed in a python library named `lib`. Should you have to change the paths to the datasets location, you have to edit the `__init__.py` file of the library.
+The core functionality, including model implementations and dataset loaders, is housed in the `lib` directory. If dataset paths need adjustment, modify the `__init__.py` file within this directory.
 
-## Scripts
+## Script Files
 
-The scripts used for the experiment in the paper are in the `scripts` folder.
+All scripts for running the experiments are located in the `scripts` directory:
 
-* `run_baselines.py` is used to compute the metrics for the `MEAN`, `KNN`, `MF` and `MICE` imputation methods. An example of usage is
-
-	```
-	python ./scripts/run_baselines.py --datasets air36 air --imputers mean knn --k 10 --in-sample True --n-runs 5
-	```
-
-* `run_imputation.py` is used to compute the metrics for the deep imputation methods. An example of usage is
+* `run_baselines.py`：Calculates metrics for the `MEAN` and `KNN` imputation methods. Example usage:
 
 	```
-	python ./scripts/run_imputation.py --config config/grin/air36.yaml --in-sample False
+	python ./scripts/run_baselines.py --datasets flo --in-sample True
 	```
-
-* `run_synthetic.py` is used for the experiments on the synthetic datasets. An example of usage is
+ * `run_base-grin.py`: Computes metrics for `VAR`, `rGAIN`, `BRITS`, `MPGRU` and `GRIN` imputation methods. Example usage:
 
 	```
-	python ./scripts/run_synthetic.py --config config/grin/synthetic.yaml --static-adj False
+	python ./scripts/run_base-grin.py --config config/grin/flo.yaml --in-sample False
+
+* `run_grnni.py`: Runs the evaluation for the `Hydro-GRNNI` model. Example usage:
+
+	```
+	python ./scripts/run_grnni.py --config config/grin/flo.yaml --in-sample False
 	```
 
 ## Requirements
 
-We run all the experiments in `python 3.8`, see `requirements.txt` for the list of `pip` dependencies.
+The experiments are conducted using Python 3.8. The required packages are listed in `requirements.txt` and `conda_env.yml`.
 
 ## Bibtex Citation
 
-Should you find this code beneficial, we would greatly appreciate it if you could cite our work:
+If you find this code useful, we would greatly appreciate it if you could cite our work:
 
 ```
 @mastersthesis{shuo2024hydro,
@@ -103,7 +88,7 @@ Should you find this code beneficial, we would greatly appreciate it if you coul
     author={Shuo Han},
     school={Northwestern University},
     year={2024},
-    url={https://openreview.net/forum?id=kOu3-S3wJ7}
+    url={https://arxiv.org/submit/5840053/view}
 }
 ```
 
