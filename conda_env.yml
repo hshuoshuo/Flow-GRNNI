@@ -1,0 +1,29 @@
+name: grnni
+channels:
+  - defaults
+  - pytorch
+  - conda-forge
+dependencies:
+  - python=3.8
+  - pip
+  - pytables
+  - pytorch=1.8
+  - torchvision
+  - torchaudio
+  - wheel
+  - tensorflow=2.5.0
+  - tensorflow-gpu=2.4.0
+  - numpy
+  - tables
+  - pip:
+      - einops
+      - fancyimpute==0.6
+      - h5py
+      - openpyxl
+      - pandas
+      - pytorch-lightning==1.4
+      - pyyaml
+      - scikit-learn
+      - scipy
+      - tensorboard
+      - torchmetrics==0.5
