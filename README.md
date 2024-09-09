@@ -1,7 +1,7 @@
 # Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation - [pdf]([https://openreview.net/pdf?id=kOu3-S3wJ7](https://arxiv.org/submit/5840053/view)))
 
 [![PDF](https://img.shields.io/badge/%E2%87%A9-PDF-orange.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
-[![arXiv](https://img.shields.io/badge/arXiv-2108.00298-b31b1b.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
+[![arXiv](https://img.shields.io/badge/arXiv-6666.66666-b31b1b.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
 
 This repository contains the code to replicate the experiments from the paper "Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation." The paper presents a Graph Recurrent Neural Network (GRNN) that leverages river network structures and spatiotemporal data to enhance data resolution and accuracy.
 
