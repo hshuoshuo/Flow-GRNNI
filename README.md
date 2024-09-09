@@ -66,12 +66,12 @@ All scripts for running the experiments are located in the `scripts` directory:
  * `run_run_baselines2.py`: Computes metrics for `VAR`, `rGAIN`, `BRITS`, `MPGRU` and `GRIN` imputation methods. Example usage:
 
 	```
-	python ./scripts/run_baselines2.py --config config/grin/flo.yaml --in-sample False
+	python ./scripts/run_baselines2.py --config config/grin/flo-dis.yaml --in-sample False
 	```
 * `run_grnni.py`: Runs the evaluation for the `Hydro-GRNNI` model. Example usage:
 
 	```
-	python ./scripts/run_grnni.py --config config/grin/flo.yaml --in-sample False
+	python ./scripts/run_grnni.py --config config/grnni/flo-dis.yaml --in-sample False
 	```
 
 ## Requirements
