@@ -67,7 +67,7 @@ All scripts for running the experiments are located in the `scripts` directory:
 
 	```
 	python ./scripts/run_baselines2.py --config config/grin/flo.yaml --in-sample False
-
+	```
 * `run_grnni.py`: Runs the evaluation for the `Hydro-GRNNI` model. Example usage:
 
 	```
