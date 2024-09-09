@@ -5,7 +5,7 @@
 
 This repository contains the code to replicate the experiments from the paper "Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation." The paper presents a Graph Recurrent Neural Network (GRNN) that leverages river network structures and spatiotemporal data to enhance data resolution and accuracy.
 
-**Authors**: [Shuo Han](shuohan2024.1@u.northwestern.edu)
+**Author**: [Shuo Han](shuohan2024.1@u.northwestern.edu)
 
 ---
 
