@@ -1,4 +1,4 @@
-# Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation - [pdf]([https://openreview.net/pdf?id=kOu3-S3wJ7](https://arxiv.org/submit/5840053/view)))
+# Hydro-GRNNI: Hydrological Graph Recurrent Neural Network for Imputation
 
 [![PDF](https://img.shields.io/badge/%E2%87%A9-PDF-orange.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
 [![arXiv](https://img.shields.io/badge/arXiv-6666.66666-b31b1b.svg?style=flat-square)](https://arxiv.org/submit/5840053/view)
